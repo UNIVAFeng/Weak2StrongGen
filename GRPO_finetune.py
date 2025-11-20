@@ -18,7 +18,7 @@ import numpy as np
 from math_datasets import MATHQuestion, load_questions, eval_model_answers
 from grpo_data_pipline import get_questions, extract_xml_answer
 from trl import GRPOConfig, GRPOTrainer
-from prm800k.grading.grader import grade_answer
+from prm800k.prm800k.grading.grader import grade_answer
 
 lora_rank = 16
 max_prompt_length = 1024
@@ -26,9 +26,9 @@ max_prompt_length = 1024
 # os.environ["HF_HUB_OFFLINE"] = "1" # Moved to top
 max_seq_length=2048
 
-def load_model(model, max_seq_length=2048):
+def load_model(model_name, max_seq_length=2048):
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name=model,
+        model_name=model_name,
         local_files_only=True,
         max_seq_length=max_seq_length,
         load_in_4bit=True,
