@@ -1,0 +1,9 @@
+anthropic
+datasets
+pylatexenc
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+
